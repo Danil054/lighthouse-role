@@ -1,0 +1,11 @@
+---
+# tasks file for lighthouse-role
+- name: Install git
+  ansible.builtin.yum:
+    name: git
+    state: present
+- name: lighthouse from git
+  ansible.builtin.git:
+    repo: "{{ LH_REPO }}"
+    version: master
+    dest: "{{ LH_DIR }}"
